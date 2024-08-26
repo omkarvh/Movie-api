@@ -118,9 +118,7 @@ startMovieDisplay();
 function open(){
     document.getElementById("search_result").style.display = 'block'
 }
-function close() {
-    document.getElementById("search_result").style.display = 'none';
-}
+
 
 
 // Event listener for the search button
