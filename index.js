@@ -115,38 +115,15 @@ startMovieDisplay();
 
 
 
-
-
-
-
-
-
-
-
-
-/*
-var circle = document.querySelector('#svg #bar');
-
-if (isNaN(sampleNum)) {
-    sampleNum = 100; // Assign 100 if the value is not a number
-} else {
-    var r = circle.getAttribute('r');
-    var c = Math.PI * (r * 2);
-
-    if (sampleNum < 0) { sampleNum = 0; }
-    if (sampleNum > 100) { sampleNum = 100; }
-
-    var pct = ((100 - sampleNum) / 100) * c;
-
-    circle.style.strokeDashoffset = pct;
-
-    document.getElementById('cont').setAttribute('data-pct', sampleNum);
+function open(){
+    document.getElementById("search_result").style.display = 'block'
+}
+function close() {
+    document.getElementById("search_result").style.display = 'none';
 }
 
-//search
 
-/*
-
+// Event listener for the search button
 document.getElementById('searchButton').addEventListener('click', function() {
     const movieTitle = document.getElementById('movieTitle').value;
     const apiKey = 'df46bc53'; // Replace with your OMDb API key
@@ -156,23 +133,37 @@ document.getElementById('searchButton').addEventListener('click', function() {
         .then(response => response.json())
         .then(data => {
             if (data.Response === 'True') {
-                const movieInfo = `
-                    <h2>${data.Title} (${data.Year})</h2>
-                    <img src="${data.Poster}" alt="${data.Title}" style="width: 200px;">
-                    <p><strong>Genre:</strong> ${data.Genre}</p>
-                    <p><strong>Plot:</strong> ${data.Plot}</p>
-                    <p><strong>IMDB Rating:</strong> ${data.imdbRating}</p>
-                `;
-                document.getElementById('movieInfo').innerHTML = movieInfo;
+                const M_name = data.Title;
+                const M_year = data.Year;
+                const M_poster = data.Poster;
+                const M_genre = data.Genre;
+                const M_plot = data.Plot;
+                const M_rating = data.imdbRating;
+
+                $('#Movie_name').html(M_name);
+                $('#M_year').html(M_year);
+                $('#Picture').attr('src', M_poster); // Use attr() to set the src attribute
+                $('#M_genere').html(M_genre);
+                $('#M_plot').html(M_plot);
+                $('#M_rating').html(`IMDB Rating: ${M_rating}`);
+                
+                // Show the search results
+                open()
+     
             } else {
-                document.getElementById('movieInfo').innerHTML = `<p>Movie not found!</p>`;
+
+                open()
+                $('#Movie_name').html(`<p>Movie not found!</p>`);
+                
+                // Show the search results
+ 
             }
         })
         .catch(error => console.error('Error:', error));
 });
 
-//search ends
 
-*/
+
+
 
 

@@ -19,6 +19,38 @@
     <title>Movie lovers world!</title>
   </head>
   <body>
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand">Movie lovers!</a>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="movieTitle">
+          <button class="btn btn-outline-success" type="button" id="searchButton">Search</button>
+        </form>
+      </div>
+    </nav>
+    
+ <!-- Search output -->
+ <div class="container bg-dark sch" id="search_result" style="display: none;">
+  <div class="row">
+    <div class="col-6 col-sm-12 col-lg-6">
+   
+
+      <h2 id="Movie_name">Movie name</h2>
+      <p id="M_year"></p>
+      <div class="">
+        <img id="Picture" class="poster-img" src="" alt="">
+      </div>
+    </div>
+    <div class="col-6 col-sm-12 col-lg-6 d-flex align-items-center">
+      <ul>
+        <li><u id="M_genere"></u></li>
+        <li><h6 id="M_plot"></h6></li>
+        <li><h6 id="M_rating"></h6></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- Search output -->
 
   <div class="container-fluid main " id="main">
     <div class="row sub-main  effect">
