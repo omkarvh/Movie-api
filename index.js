@@ -1,9 +1,11 @@
+
 // Define API key and base URL
+
 const apiKey = 'df46bc53'; // Replace with your OMDb API key
 const genres = ['Action', 'Comedy', 'Drama', 'Horror', 'Thriller']; // Add genres as needed
 
 // Fetch movies with IMDb rating above 8 from specific genres
-function fetchMovies() {
+ function fetchMovies() {
     const genre = genres[Math.floor(Math.random() * genres.length)];
     const searchUrl = `http://www.omdbapi.com/?s=${encodeURIComponent(genre)}&apikey=${apiKey}`;
 
@@ -55,6 +57,8 @@ function displayRandomMovie(movies) {
     const plot = `${movie.Plot}`
     const lang = `${movie.Language}`
     const run = `${movie.Runtime}`
+
+    console.log(title)
 
 
     var circle = document.querySelector('#svg #bar');
